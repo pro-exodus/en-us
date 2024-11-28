@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Exodus Web3 Wallet for Seamless Crypto Management. Explore web3 on your phone or computer with the Exodus Web3 Wallet.">
+    <meta name="keywords" content="Exodus, Web3 Wallet, Crypto Wallet, Cryptocurrency, Blockchain, DeFi, NFT, dApp Browser, Crypto Swap, Portfolio Tracking">
+    <meta name="author" content="Exodus">
+    <meta name="robots" content="index, follow">
+    <title>Exodus® Web3 Wallet | Exodus® Browser Extension</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to bottom, #1a1a2e, #16213e);
+            color: white;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #1a1a2e;
+        }
+        .navbar .company-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        .navbar ul li {
+            position: relative;
+        }
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 400;
+        }
+        .navbar ul li a:hover {
+            color: #a3a3c2;
+        }
+        .navbar ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #1a1a2e;
+            padding: 10px 0;
+            list-style: none;
+        }
+        .navbar ul li:hover ul {
+            display: block;
+        }
+        .navbar ul li ul li {
+            padding: 10px 20px;
+        }
+        .navbar ul li ul li a {
+            color: white;
+        }
+        .navbar ul li ul li a:hover {
+            color: #a3a3c2;
+        }
+        .download-btn {
+            background-color: #6c63ff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 700;
+        }
+        .download-btn:hover {
+            background-color: #5753c9;
+        }
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background-size: cover;
+            background-position: center;
+            animation: slide 6s infinite;
+        }
+        @keyframes slide {
+            0% { background-image: url('https://www.exodus.com/asset-page/img/xrp/header-bg-lsize.jpg'); }
+            33% { background-image: url('https://www.exodus.com/waas/img/header-bg-lsize.png'); }
+            66% { background-image: url('https://www.exodus.com/asset-page/img/bsv/header-bg-lsize.jpg'); }
+            100% { background-image: url('https://www.exodus.com/asset-page/img/xrp/header-bg-lsize.jpg'); }
+        }
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 24px;
+            font-weight: 300;
+            margin: 20px 0;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .buttons a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            color: white;
+        }
+        .buttons a.download-mobile {
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
+        }
+        .buttons a.download-extension {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+        }
+        .buttons a i {
+            font-size: 20px;
+        }
+        .content-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+            background-color: #16213e;
+            border-top: 2px solid white;
+        }
+        .content-section img {
+            width: 300px;
+            height: auto;
+            margin-right: 50px;
+        }
+        .content-section .text-content {
+            max-width: 600px;
+        }
+        .content-section .text-content h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin: 0 0 20px 0;
+        }
+        .content-section .text-content p {
+            font-size: 18px;
+            font-weight: 300;
+            margin: 0;
+        }
+        .features-section {
+            background-color: #183E65;
+            padding: 50px;
+            color: white;
+            border-top: 2px solid white;
+        }
+        .features-section h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .features-section p {
+            font-size: 18px;
+            font-weight: 300;
+            margin: 10px 0;
+            text-align: justify;
+        }
+        .features-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        .footer {
+            background-color: white;
+            padding: 50px;
+            color: black;
+        }
+        .footer h2 {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+        .footer .footer-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .footer .footer-content .section {
+            flex: 1;
+        }
+        .footer .footer-content .section h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .footer .footer-content .section p {
+            font-size: 14px;
+            font-weight: 300;
+            margin: 5px 0;
+        }
+        .footer .footer-content .section p b {
+            font-weight: 700;
+        }
+        .footer hr {
+            border: 1px solid black;
+            margin-bottom: 20px;
+        }
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .navbar ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .content-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .content-section img {
+                margin: 0 0 20px 0;
+            }
+            .buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .footer .footer-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Exodus Web3 Wallet",
+      "url": "https://www.exodus.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.exodus.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="company-name">
+            Exodus
+        </div>
+        <ul>
+            <li>
+                <a href="#">Products</a>
+                <ul>
+                    <li><a href="#">Product 1</a></li>
+                    <li><a href="#">Product 2</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Support</a>
+                <ul>
+                    <li><a href="#">Support 1</a></li>
+                    <li><a href="#">Support 2</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Learn</a>
+                <ul>
+                    <li><a href="#">Learn 1</a></li>
+                    <li><a href="#">Learn 2</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Company</a>
+                <ul>
+                    <li><a href="#">Company 1</a></li>
+                    <li><a href="#">Company 2</a></li>
+                </ul>
+            </li>
+        </ul>
+        <a class="download-btn" href="#">DOWNLOAD</a>
+    </div>
+    <div class="hero">
+        <h1>Exodus Web3 Wallet</h1>
+        <p>Multichain Web3 Wallet | Exodus Browser Extension</p>
+        <div class="buttons">
+            <a class="download-mobile" href="#"><i class="fas fa-mobile-alt"></i> DOWNLOAD MOBILE</a>
+            <a class="download-extension" href="#"><i class="fas fa-puzzle-piece"></i> DOWNLOAD EXTENSION</a>
+        </div>
+    </div>
+    <div class="content-section">
+        <img alt="Mobile app screenshot" src="https://www.exodus.com/download/en/img/mobile.png">
+        <div class="text-content">
+            <h2><b>What is Exodus Web3 Wallet?</b></h2>
+            <p>Exodus Web3 Wallet is a non-custodial, multi-currency wallet that supports a wide range of blockchain networks, including Ethereum, Binance Smart Chain, and Solana, among others. It enables users to store, send, and receive a variety of cryptocurrencies, including Bitcoin, Ethereum, and hundreds of ERC-20 tokens, without relying on third-party services.</p>
+            <p>Unlike traditional wallets that store your private keys with a third party, the Exodus Web3 Wallet allows you to own and manage your private keys, making it a safer option for those concerned about security risks. The wallet is also integrated with popular decentralized exchanges (DEXs) and decentralized finance (DeFi) platforms, allowing users to engage in peer-to-peer transactions directly from the wallet.</p>
+        </div>
+    </div>
+    <div class="features-section">
+        <h2>Key Features of Exodus Web3 Wallet</h2>
+        <ul>
+            <li><b>User-Friendly Interface:</b> Exodus is designed with beginners and experienced users in mind. The wallet's intuitive interface makes it easy for anyone to start using, even without prior blockchain knowledge.</li>
+            <li><b>Private and Secure:</b> With Exodus Web3 Wallet, you retain complete control of your private keys. Your data stays encrypted, ensuring that no one else can access your assets without your approval. The wallet also supports advanced security features like two-factor authentication (2FA) for added protection.</li>
+            <li><b>Built-in Exchange:</b> One of the standout features of Exodus is its built-in exchange that allows users to swap different cryptocurrencies within the wallet. This eliminates the need to transfer assets to an external exchange, saving both time and transaction fees.</li>
+            <li><b>Cross-Platform Support:</b> Exodus is available on multiple platforms, including Windows, macOS, Linux, Android, and iOS. This makes it easy for users to access their digital assets from any device.</li>
+            <li><b>DeFi Integration:</b> Exodus is integrated with DeFi protocols, allowing users to lend, borrow, and earn interest on their crypto holdings. The wallet also supports staking, providing users with opportunities to grow their portfolios.</li>
+        </ul>
+    </div>
+    <div class="footer">
+        <hr>
+        <h2>Exodus Web3 Wallet | Exodus Browser Extension</h2>
+        <div class="footer-content">
+            <div class="section">
+                <h3>Products</h3>
+                <p><b>Web3 Wallet</b></p>
+                <p>Mobile Wallet</p>
+                <p>Desktop Wallet</p>
+                <p>Trezor Hardware Wallet</p>
+                <p>Earn Crypto Rewards</p>
+                <p>XO Swap</p>
+                <p>Passkeys Wallet & SDK</p>
+                <p>Wallet-as-a-Service (WaaS)</p>
+            </div>
+            <div class="section">
+                <h3>Support</h3>
+                <p><b>24/7 Customer Support</b></p>
+                <p>Crypto Assets</p>
+                <p>Legal Inquiries</p>
+            </div>
+            <div class="section">
+                <h3>Learn</h3>
+                <p><b>Knowledge Base</b></p>
+                <p>YouTube</p>
+                <p>Newsletter</p>
+            </div>
+            <div class="section">
+                <h3>Company</h3>
+                <p><b>About Us</b></p>
+                <p>Investors</p>
+                <p>Careers</p>
+                <p>Contact Us</p>
+                <p>Brand Guidelines</p>
+                <p>Security</p>
+                <p>Intellectual Property</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
